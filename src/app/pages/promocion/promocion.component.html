@@ -1,0 +1,36 @@
+<ion-card *ngFor="let datos of datos" class="ion-card-with-image">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-img [alt]="datos.img_ps" [src]="'http://localhost/Monedero/Admin/img/' + datos.img_ps" class="ion-img"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card-header>
+          <ion-card-title>{{datos.nombre_prod}}</ion-card-title>
+          <ion-card-subtitle> Válido a partir de {{datos.puntos}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{datos.descripcion}}  
+        </ion-card-content>
+        <ion-button fill="clear" (click)="mostrarAlertaCanje()">Canjear</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+
+<style>
+  .ion-card-with-image {
+    height: auto; /* Ajusta la altura según tus necesidades o utiliza 'auto' para que se adapte al contenido */
+  }
+
+  .ion-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+</style>
+
+   
+  
+    

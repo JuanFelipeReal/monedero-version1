@@ -1,0 +1,7 @@
+{
+  "name": "monedero-version1",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,38 @@
+<ion-content color="light">
+    <ion-list [inset]="true">
+      <ion-item [button]="true" routerLink="/ajustesapp"> 
+        <ion-icon color="danger" slot="start" name="settings-outline" size="large"></ion-icon>
+        <ion-label>Ajustes Adicionales</ion-label>
+        <ion-note slot="end"> 
+            <ion-icon name="caret-forward-outline"></ion-icon>
+         </ion-note>
+      </ion-item>
+      <ion-item [button]="true"  routerLink="/datosgenerales"> 
+        <ion-icon color="tertiary" slot="start" name="person-outline" size="large"></ion-icon>
+        <ion-label>Datos Generales</ion-label>
+        <ion-note slot="end"> 
+            <ion-icon name="caret-forward-outline"></ion-icon>
+         </ion-note>
+      </ion-item>
+      <ion-item [button]="true"  routerLink="/ayudaxd">
+        <ion-icon color="success" slot="start" name="help-circle-outline" size="large"></ion-icon>
+        <ion-label>Ayuda</ion-label>
+        <ion-note slot="end">  
+            <ion-icon name="caret-forward-outline"></ion-icon>
+         </ion-note>
+      </ion-item>
+      <ion-item [button]="true"  routerLink="/terminos">
+        <ion-icon color="warning" slot="start" name="document-lock-outline" size="large"></ion-icon>
+        <ion-label>Terminos y condiciones</ion-label>
+        <ion-note slot="end"> 
+            <ion-icon name="caret-forward-outline"></ion-icon>
+         </ion-note>
+      </ion-item>
+      <ion-item [button]="true" routerLink="/privacidad">
+        <ion-icon color="warning" slot="start" name="lock-closed-outline" size="large"></ion-icon>
+        <ion-label>Aviso de privacidad</ion-label>
+        <ion-note slot="end"> 
+            <ion-icon name="caret-forward-outline"></ion-icon>
+         </ion-note>
+      </ion-item>
+    </ion-list>

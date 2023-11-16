@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button slot="start" routerLink="/ajustes"  color="light">
+            <ion-icon name="caret-back-outline" color="success"></ion-icon>
+        </ion-button>
+        <ion-title class="ion-text-center">Datos Generales</ion-title>
+      </ion-toolbar>
+</ion-header>
+<ion-content color="light">
+    <ion-list [inset]="true" *ngFor="let datos of datos">
+        <ion-title class="ion-text-center">Dirección</ion-title>
+        <ion-item>
+          <ion-label>Calle: {{ datos.calle }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Colonia: {{ datos.colonia }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Código Postal: {{ datos.cp }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ciudad: {{ datos.ciudad }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Municipio: {{ datos.municipio }}</ion-label>
+        </ion-item>
+      </ion-list>
+    
+
+      <ion-list [inset]="true" *ngFor="let datos of datos">
+        <ion-title class="ion-text-center">Datos Personales</ion-title>
+        <ion-item>
+          <ion-label>Nombre(s): {{ datos.nombres }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellidos: {{ datos.apellidos }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Género: {{ datos.genero }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha de Nacimiento: {{ datos.fecha_naci }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Celular: {{ datos.celular }}</ion-label>
+        </ion-item>
+      </ion-list>
+    
+
+      <ion-list [inset]="true" *ngFor="let datos of datos">
+        <ion-title class="ion-text-center">Datos del Usuario</ion-title>
+        <ion-item>
+          <ion-label>Nombre del Usuario: {{ datos.nombre_user }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo Electrónico: {{ datos.email }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha de Alta: {{ datos.fecha_alta }}</ion-label>
+        </ion-item>
+      </ion-list>
+  </ion-content>

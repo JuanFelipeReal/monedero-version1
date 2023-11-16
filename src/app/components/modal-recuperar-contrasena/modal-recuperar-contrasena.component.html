@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Recuperar Contraseña</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="cerrarModal()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <form (ngSubmit)="iniciar_recuperacion(formData)">
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input  type="text" [(ngModel)]="formData.user" name="user"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Número de Celular</ion-label>
+      <ion-input  type="number" [(ngModel)]="formData.dato_extra" name="dato_extra"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Nueva Contraseña</ion-label>
+        <ion-input  type="password" [(ngModel)]="formData.contra_new" name="contra_new"></ion-input>
+      </ion-item>
+  
+    <ion-button expand="full" color="danger" type="submit" >Recuperar Contraseña</ion-button>
+  </form>
+  </ion-content>
+  

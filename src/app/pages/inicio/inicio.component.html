@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngFor="let user of datos" style="font-size: 25px;">
+      <p>{{getGreeting()}}</p>
+      <h2>{{user.nombres}} {{user.apellidos}}</h2>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--- Inicia el cuerpo del inicio -->
+<ion-content color="light">
+  <!-- Sección de Puntos Disponibles -->
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title style="display: flex; justify-content: space-between; align-items: center;">  
+        <span style="font-size: large;">Puntos Disponibles</span>
+        <span *ngFor="let user of datos" style="font-size: 30px;" color="success">{{ user.puntos }}</span>
+      </ion-card-title>
+      <ion-card-subtitle *ngFor="let user of datos" style="align-items: end; display: flex; justify-content: end;">
+        <span>Valido hasta: </span>
+        <span>{{user.fecha_renovacion}}</span>
+      </ion-card-subtitle>
+    </ion-card-header>
+    
+  </ion-card>
+
+  <!-- Sección de Compras Realizadas -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Compras Realizadas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+      <!-- Lista de compras con fecha, puntos ganados y producto consumido -->
+      <ion-list *ngIf="DatosMostrar && DatosMostrar.length > 0; else noDataMessage">
+        <!-- Lista de compras con fecha, puntos ganados y producto consumido -->
+        <ion-item *ngFor="let movi of DatosMostrar" style="font-size: 20px;">
+          <ion-label>{{movi.fecha}}</ion-label>
+          <ion-label>{{movi.nombre_prod}}</ion-label>
+          <ion-note slot="end" [ngStyle]="{'color': movi.tipo_trans === 'compra' ? 'green' : 'red', 'font-size.px': 20}">
+            {{movi.tipo_trans === 'compra' ? '+' : '-'}}
+            {{movi.puntos_tras}}
+          </ion-note>
+        </ion-item>
+        <!-- Agrega más elementos de lista según tus compras -->
+      </ion-list>
+      
+      <ng-template #noDataMessage>
+        <ion-text style="text-align: center; padding: 20px;">
+          Aquí se reflejarán los puntos que obtenga con cada compra.
+        </ion-text>
+      </ng-template>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+  <!-- ========== Codigo QR ========== -->
+<ion-fab slot="fixed"  vertical="bottom" horizontal="center">
+    <ion-fab-button color="success" id="open-modal" expand="block">
+        <ion-icon name="card-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+        
+      <div class="block">        
+        <ion-card-header>
+          <ion-card-title>Codigo QR </ion-card-title>
+        </ion-card-header>
+            <ion-card-content>
+                <qrcode [qrdata]='qrCodeData' [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
+              </ion-card-content>
+            
+        </div>
+    
+    </ng-template>
+  </ion-modal>
+  </ion-fab>
+<style>
+    .block {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .qr{
+        width: 60%;
+        height: auto;
+      }
+      ion-modal {
+        --height: auto;
+      }
+</style>

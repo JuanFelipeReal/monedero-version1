@@ -1,0 +1,19 @@
+ 
+  <ion-router-outlet>
+    <ion-tabs >
+      <ion-tab-bar color="success" slot="bottom" *ngIf="isNotLoginPage()" >
+        <ion-tab-button tab="home" >
+          <ion-icon name="home-outline"></ion-icon>
+          Inicio
+        </ion-tab-button>
+        <ion-tab-button tab="promo" >
+          <ion-icon name="gift-outline"></ion-icon>
+            Promociones
+        </ion-tab-button>
+        <ion-tab-button tab="ajustes">
+          <ion-icon name="settings-outline"></ion-icon>
+          Ajustes
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-router-outlet>
