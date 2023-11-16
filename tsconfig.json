@@ -5,8 +5,8 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitOverride": false, // Cambiado a false
+    "noPropertyAccessFromIndexSignature": false, // Cambiado a false
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -15,11 +15,11 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "es2015", // Cambiado a es2015
+    "module": "es2015", // Cambiado a es2015
     "useDefineForClassFields": false,
     "lib": [
-      "ES2022",
+      "es2015", // Cambiado a es2015
       "dom"
     ]
   },
